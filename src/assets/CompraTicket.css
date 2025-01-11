@@ -1,0 +1,618 @@
+.compra-ticket {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Step Indicator */
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+}
+
+.step-item.active {
+    color: #7c3aed;
+}
+
+.step-icon {
+    width: 36px;
+    height: 36px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    transition: all 0.3s ease;
+}
+
+.step-item.active .step-icon {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    transform: scale(1.1);
+}
+
+.step-divider {
+    width: 100px;
+    height: 2px;
+    background-color: #e5e7eb;
+    margin: 0 24px;
+    position: relative;
+}
+
+.step-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7c3aed;
+    transition: width 0.5s ease;
+}
+
+.step-item.active+.step-divider::after {
+    width: 100%;
+}
+
+/* Form Styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: slideUp 0.5s ease;
+}
+
+.form-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 32px;
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-2px);
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.form-header-icon {
+    color: #7c3aed;
+}
+
+.form-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.form-group input {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+/* Price Banner */
+.price-banner {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Ticket Selection Styles */
+.ticket-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.quick-selection label,
+.custom-selection label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+
+.preset-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.btn-preset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    background-color: #f5f3ff;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-preset:hover {
+    background-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.ticket-amount {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.ticket-price {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: #f9fafb;
+    color: #4b5563;
+    font-size: 20px;
+}
+
+.quantity-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.quantity-input input {
+    flex: 1;
+    text-align: center;
+    font-size: 16px;
+    padding: 12px 0;
+    border: none;
+    outline: none;
+}
+
+.ticket-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ticket-summary .summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: #4b5563;
+}
+
+.ticket-summary .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.price-update {
+    animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #7c3aed;
+    color: white;
+    border: 2px solid #7c3aed;
+}
+
+.btn-primary:hover {
+    background-color: #6d28d9;
+    border-color: #6d28d9;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+}
+
+.btn-secondary:hover {
+    background-color: #f5f3ff;
+}
+
+/* Payment Amount Styles */
+.btn-pay {
+    position: relative;
+    padding-right: 32px;
+}
+
+.payment-amount {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f5f3ff;
+    color: #7c3aed;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* terminos*/
+.terms-group {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+}
+
+.terms-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    color: #4b5563;
+}
+
+.terms-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    accent-color: #7c3aed;
+}
+
+.terms-checkbox:checked {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos base para modales */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.custom-modal {
+    background: white;
+    border-radius: 6px;
+    width: 90%;
+    height: 95vh;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideUp 0.4s ease-out;
+}
+
+.custom-modal-header {
+    padding: 2px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.custom-close-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.custom-close-button:hover {
+    color: #333;
+}
+
+.custom-modal-content {
+    padding: 0px;
+    text-align: center;
+}
+
+/* Estilos específicos para el modal de pago */
+.payment-modal {
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.payment-qr-image {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-details {
+    margin-bottom: 24px;
+}
+
+.payment-number {
+    color: #666;
+    font-size: 1rem;
+    margin: 0 0 8px;
+}
+
+.payment-title {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 0 0 5px;
+}
+
+.payment-description {
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.cancel-button,
+.confirm-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-size: 1rem;
+}
+
+.cancel-button {
+    background-color: #f1f3f5;
+    color: #495057;
+}
+
+.confirm-button {
+    background-color: #228be6;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #e9ecef;
+}
+
+.confirm-button:hover {
+    background-color: #1c7ed6;
+}
+
+/* Estilos específicos para el modal de éxito */
+.success-modal {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+.success-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #e3f2fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.success-check-icon {
+    color: #228be6;
+}
+
+.success-title {
+    color: #1a1a1a;
+    font-size: 1.75rem;
+    margin: 0 0 16px;
+}
+
+.success-message {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.success-message p {
+    margin: 8px 0;
+}
+
+.highlight-text {
+    color: #228be6;
+    font-weight: 600;
+}
+
+.success-button {
+    background-color: #228be6;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.success-button:hover {
+    background-color: #1c7ed6;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+    .custom-modal {
+        width: 95%;
+        margin: 16px;
+    }
+
+    .custom-modal-content {
+        padding: 0 16px 16px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-button,
+    .confirm-button,
+    .success-button {
+        width: 100%;
+    }
+}

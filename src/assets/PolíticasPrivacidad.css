@@ -1,0 +1,235 @@
+/* PoliticasPrivacidad.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.politicas-container {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.4s ease-out;
+}
+
+/* Estilizar el scrollbar */
+.politicas-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.politicas-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.politicas-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.politicas-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.politicas-header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.politicas-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.politicas-section {
+    padding: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.politicas-section:last-of-type {
+    border-bottom: none;
+}
+
+.politicas-section-title {
+    color: #1e40af;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.politicas-section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 24px;
+    background: #2563eb;
+    margin-right: 1rem;
+    border-radius: 2px;
+}
+
+.politicas-text {
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.politicas-list {
+    list-style: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.politicas-list li {
+    color: #4b5563;
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+    line-height: 1.6;
+}
+
+.politicas-list li::before {
+    content: '•';
+    color: #2563eb;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.25rem;
+}
+
+.politicas-footer {
+    background: #f8fafc;
+    padding: 1.5rem 2rem;
+    text-align: right;
+    border-top: 1px solid #e5e7eb;
+    color: #64748b;
+    font-size: 0.9rem;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 0.5rem;
+    }
+
+    .politicas-container {
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .politicas-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .politicas-title {
+        font-size: 1.3rem;
+    }
+
+    .politicas-section {
+        padding: 1.5rem;
+    }
+
+    .politicas-section-title {
+        font-size: 1.25rem;
+    }
+
+    .politicas-text {
+        font-size: 1rem;
+    }
+}
+
+/* Para dispositivos muy pequeños */
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 0;
+    }
+
+    .politicas-container {
+        border-radius: 0;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .politicas-header {
+        border-radius: 0;
+    }
+
+    .politicas-section {
+        padding: 1.25rem;
+    }
+
+    .politicas-title {
+        font-size: 1.2rem;
+    }
+}

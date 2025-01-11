@@ -1,0 +1,138 @@
+.raffle-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f3e8ff 0%, #ffffff 100%);
+    padding: 3rem 1rem;
+}
+
+.raffle-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.raffle-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.raffle-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #6b21a8;
+    margin-bottom: 1rem;
+}
+
+.raffle-header p {
+    color: #666;
+}
+
+.info-card {
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6b21a8;
+    margin-bottom: 1.5rem;
+}
+
+.info-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-item .icon {
+    font-size: 1.5rem;
+}
+
+.info-item .label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.alert-box {
+    background: #f3e8ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.alert-box .icon {
+    font-size: 1.25rem;
+}
+
+.details-text {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #6b21a8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-button:hover {
+    background: #581c87;
+}
+
+.secondary-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    color: #6b21a8;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e9d5ff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.secondary-button:hover {
+    background: #f3e8ff;
+}
+
+@media (max-width: 640px) {
+    .raffle-header h1 {
+        font-size: 2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
