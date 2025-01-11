@@ -63,7 +63,7 @@ const Contacto = () => {
                 <Clock className="info-icon" size={24} />
                 <div>
                   <strong>Horario de Atención</strong>
-                  <p>Lunes a <Domingo></Domingo>: 9:00 am - 10:00 pm</p>
+                  <p>Lunes a Domingo: 9:00 am - 10:00 pm</p>
                 </div>
               </div>
             </div>
