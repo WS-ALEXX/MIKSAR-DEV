@@ -33,7 +33,7 @@ const DetalleSorteo = () => {
               <span className="icon">🔗</span>
               <div>
                 <p className="label">Transmisión</p>
-                <p>Enlace por correo electrónico</p>
+                <p>Recibirás un enlace por correo electrónico</p>
               </div>
             </div>
           </div>
@@ -50,9 +50,9 @@ const DetalleSorteo = () => {
         <div className="info-card">
           <h2>Detalles Importantes</h2>
           <p className="details-text">
-            El sorteo se llevará a cabo ante escribano público y será transmitido en vivo 
-            a través de nuestras redes sociales. Asegúrate de estar pendiente para no perderte
-            este emocionante evento.
+            🎯 ¡MOMENTO DECISIVO EN VIVO!<br></br>
+            El sorteo será legal y transparente, transmitido en directo por nuestras redes sociales.
+            ¡No te pierdas el momento de los ganadores!
           </p>
           <div className="button-group">
             <button className="primary-button">
