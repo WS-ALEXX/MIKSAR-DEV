@@ -86,7 +86,7 @@ const Footer = () => {
                                 placeholder="Tu email"  
                                 className="footer-input"  
                             />  
-                            <button type="submit" className="footer-button">  
+                            <button type="submit" className="footer-button" onClick={() => window.location.reload()}>  
                                 Suscribirse  
                             </button>  
                         </form>  

@@ -121,7 +121,7 @@ const Contacto = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="form-submit">
+              <button type="submit" className="form-submit" onClick={() => window.location.reload()}>
                 <Send size={20} />
                 Enviar Mensaje
               </button>
