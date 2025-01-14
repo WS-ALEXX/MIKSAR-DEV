@@ -6,11 +6,12 @@ import DetalleSorteo from './components/DetalleSorteo/DetalleSorteo';
 import Premios from './components/Premios/Premios';
 import Contacto from './components/Contacto/Contacto';
 import Footer from './components/Footer/Footer'
+import WhatsAppButton from './components/wsp/WhatsAppButton'
 
 import './index.css'
 
 
-const App =  () => {
+const App = () => {
   const sorteoInfo = {
     premios: [
       "1. Iphone 15 pro max",
@@ -32,6 +33,10 @@ const App =  () => {
         <Contacto />
         <Footer />
       </main>
+      <WhatsAppButton
+        phoneNumber="+51980585880"
+        message="¡Hola! Me interesa saber más sobre el sorteo" 
+      />
     </div>
   );
 };
