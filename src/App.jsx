@@ -12,17 +12,12 @@ import './index.css'
 
 const App =  () => {
   const sorteoInfo = {
-    nombre: "Gran Sorteo 2024",
-    fecha: "30 de Diciembre 2024",
-    precio: 50,
-    disponibles: 100,
     premios: [
-      "1er Premio: 1. Iphone 15 pro max",
-      "2do Premio: 2. Premios de  S/ 500",
-      "3er Premio: 5. Premios de S/ 100"
+      "1. Iphone 15 pro max",
+      "2. Premios de  S/ 500",
+      "5. Premios de S/ 100"
     ]
   };
-
 
   return (
     <div>
