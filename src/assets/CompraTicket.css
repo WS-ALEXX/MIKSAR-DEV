@@ -601,7 +601,7 @@
         width: 95%;
         margin: 16px;
     }
-
+    
     .custom-modal-content {
         padding: 0 16px 16px;
     }
@@ -613,6 +613,12 @@
     .cancel-button,
     .confirm-button,
     .success-button {
+        width: 100%;
+    }
+    .step-indicator{
+        display: block;
+    }
+    input{
         width: 100%;
     }
 }
